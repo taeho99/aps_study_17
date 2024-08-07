@@ -3,7 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+<<<<<<< HEAD
 public class S6109_임태호 {
+=======
+public class Solution {
+>>>>>>> 4a40b7cb905437fa6826dff8c6f424d44d5d05f3
     static int size;
     static int[][] map, answer;
     public static void main(String[] args) throws IOException {
@@ -20,6 +24,10 @@ public class S6109_임태호 {
             answer = new int[size][size];
             String cmd = st.nextToken();
 
+<<<<<<< HEAD
+=======
+			//map 배열에 원본 입력
+>>>>>>> 4a40b7cb905437fa6826dff8c6f424d44d5d05f3
             for(int row=0; row<size; row++) {
                 st = new StringTokenizer(br.readLine());
                 for(int col=0; col<size; col++) {
@@ -42,6 +50,10 @@ public class S6109_임태호 {
                     break;
             }
 
+<<<<<<< HEAD
+=======
+			//answer 배열 결과 출력
+>>>>>>> 4a40b7cb905437fa6826dff8c6f424d44d5d05f3
             for(int row=0; row<size; row++) {
                 for(int col=0; col<size; col++) {
                     sb.append(answer[row][col]).append(' ');
@@ -53,24 +65,49 @@ public class S6109_임태호 {
     }
 
     private static void up() {
+<<<<<<< HEAD
         for(int col=0; col<size; col++) {
             for(int row=0; row<size-1; row++) {
                 if(map[row][col] == 0) continue;
                 int nextRow = row+1;
 
                 while(map[nextRow][col] == 0) {
+=======
+		//합치기
+        for(int col=0; col<size; col++) {
+            for(int row=0; row<size-1; row++) {
+				//값이 0일 때는 합치지 않음
+                if(map[row][col] == 0) continue;
+                int nextRow = row+1;
+
+				//다음 값이 0이 아닐때까지 탐색
+                while(map[nextRow][col] == 0) {
+					//다음 값이 만약 배열 맨 끝까지 갔으면 break
+>>>>>>> 4a40b7cb905437fa6826dff8c6f424d44d5d05f3
                     if(nextRow == size-1) break;
                     nextRow++;
                 }
 
+<<<<<<< HEAD
                 if(map[row][col] == map[nextRow][col]) {
                     map[row][col] += map[nextRow][col];
                     map[nextRow][col] = 0;
+=======
+				//현재 값과 다음 값이 같으면 합치고 다음 값을 0으로 바꾸기
+                if(map[row][col] == map[nextRow][col]) {
+                    map[row][col] += map[nextRow][col];
+                    map[nextRow][col] = 0;
+					//다음 값부터 row 탐색하기 시작
+>>>>>>> 4a40b7cb905437fa6826dff8c6f424d44d5d05f3
                     row = nextRow;
                 }
             }
         }
 
+<<<<<<< HEAD
+=======
+		//당기기
+>>>>>>> 4a40b7cb905437fa6826dff8c6f424d44d5d05f3
         for(int col=0; col<size; col++) {
             int nextRow = 0;
             for(int row=0; row<size; row++) {
